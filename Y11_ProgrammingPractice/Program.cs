@@ -24,70 +24,69 @@
                         {
                             Console.WriteLine("You won!");
                         }
-
                         else if (total > 21)
-
                         {
-
                             Console.WriteLine("You lost!");
-
                         }
-
                         else if (total < 21)
-
                         {
-
                             int newNum = r.Next(15, 22);
-
                             if (newNum > total)
-
                             {
-
                                 Console.WriteLine("You lost!");
-
                             }
-
                             else
-
                             {
-
                                 Console.WriteLine("You won!");
-
                             }
-
                         }
-
                     }
-
                     else
-
                     {
-
                         dice1 = r.Next(1, 7);
-
                         dice2 = r.Next(1, 7);
-
                         total += dice1 + dice2;
-
                     }
-
                 }
-
                 else
-
                 {
-
                     Console.WriteLine("You lost!");
-
                     continueGame = false;
-
                 }
+            }
+        }
+
+        static void No3()
+        {
+            Console.WriteLine("Enter the total amount of the bill");
+            double total = Convert.ToDouble(Console.ReadLine()!);
+            int i = 1;
+            while (total > 0)
+            {
+                Console.WriteLine($"How much is person {i} paying towards the bill?");
+                total -= Convert.ToDouble(Console.ReadLine()!);
+                if (total > 0)
+                {
+                    Console.WriteLine($"Amount left to pay: £{total}");
+                }
+                i++;
+            }
+
+            if (total == 0)
+            {
+                Console.WriteLine("Bill paid");
+
+            }
+
+            else if (total < 0)
+            {
+                Console.WriteLine($"Tip is {0 - total}");
 
             }
         }
         static void Main(string[] args)
         {
-            No1();
+            No3();
         }
     }
 }
