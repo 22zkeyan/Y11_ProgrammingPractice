@@ -56,6 +56,20 @@
             }
         }
 
+        static int No2(int days)
+        {
+            int daysOver200 = 0;
+            for (int i = 0; i < days; i++)
+            {
+                Console.WriteLine($"Enter the number of visitors on day {i + 1}");
+                int visitors = Convert.ToInt32(Console.ReadLine()!);                
+                if (visitors > 200)
+                {
+                    daysOver200++;
+                }
+            }
+            return daysOver200;
+        }
         static void No3()
         {
             Console.WriteLine("Enter the total amount of the bill");
@@ -86,7 +100,9 @@
         }
         static void Main(string[] args)
         {
-            No3();
+            Console.WriteLine("emter");
+            int daysOver200 = No2(Convert.ToInt32(Console.ReadLine()!));
+            Console.WriteLine($"days over 200: {daysOver200}");
         }
     }
 }
